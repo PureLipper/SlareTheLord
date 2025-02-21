@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Jack",
+    "damage": 10,
+    "health": 20
+  },
+  {
+    "name": "Queen",
+    "damage": 15,
+    "health": 30
+  },
+  {
+    "name": "King",
+    "damage": 20,
+    "health": 40
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "hearts": [
+    "J","Q","K"
+  ],
+  "diamonds": [
+    "J","Q","K"
+  ],
+  "clubs": [
+    "J","Q","K"
+  ],
+  "spades": [
+    "J","Q","K"
+  ],
+  "joker": 0
+}

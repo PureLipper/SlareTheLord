@@ -1,0 +1,22 @@
+[
+  {
+    "player": 1,
+    "joker": 0,
+    "handSize": 8
+  },
+  {
+    "player": 2,
+    "joker": 0,
+    "handSize": 7
+  },
+  {
+    "player": 3,
+    "joker": 1,
+    "handSize": 6
+  },
+  {
+    "player": 4,
+    "joker": 2,
+    "handSize": 5
+  }
+]
