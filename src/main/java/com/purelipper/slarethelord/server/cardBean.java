@@ -44,6 +44,14 @@ public class cardBean {
 
     @Override
     public String toString() {
-        return suit + " " + figure;
+        String s = "";
+        switch (suit) {
+            case JOKER -> s = "Joker";
+            case HEARTS -> s = "Hearts";
+            case DIAMONDS -> s = "Diamonds";
+            case CLUBS -> s = "Clubs";
+            case SPADES -> s = "Spades";
+        }
+        return s + " " + figure;
     }
 }

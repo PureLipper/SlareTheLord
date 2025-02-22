@@ -20,13 +20,16 @@ public class cardCalculator {
                 int t = cardPoints.get(s).getAsInt();
                 cardPoint.put(s, t);
             }
-            System.out.println("Card Points: " + cardPoint);
+//            System.out.println("Card Points: " + cardPoint);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
 
     public static boolean legalityCheck(ArrayList<cardBean> cards) {
+        if(cards.isEmpty()){
+            return false;
+        }
         if (cards.size() != 1) {
             if(containsFigure(cards,"joker")){
                 return false;

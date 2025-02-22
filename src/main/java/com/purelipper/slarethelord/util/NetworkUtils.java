@@ -2,10 +2,14 @@ package com.purelipper.slarethelord.util;
 
 import com.google.gson.Gson;
 import com.purelipper.slarethelord.message.message;
+import com.purelipper.slarethelord.server.player;
 
 import java.io.IOException;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
+
+import static com.purelipper.slarethelord.server.serverCore.CLIENT_PORT;
+import static com.purelipper.slarethelord.server.serverCore.SERVER_PORT;
 
 public class NetworkUtils {
     public static InetAddress getBroadcastAddress() throws SocketException, UnknownHostException {
@@ -37,6 +41,19 @@ public class NetworkUtils {
             socket.send(dp);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void broadcastMessageInPlayers(player[] players, String label, String content) {
+        for (player player : players) {
+            if(player != null){
+                try {
+                    sendMessage(new message(label, InetAddress.getLocalHost(), SERVER_PORT,
+                            InetAddress.getByName(player.getPlayerIP()), CLIENT_PORT, content));
+                } catch (UnknownHostException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 

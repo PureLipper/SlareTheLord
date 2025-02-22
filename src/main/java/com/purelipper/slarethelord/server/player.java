@@ -4,6 +4,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
+import java.lang.reflect.Array;
+
 public class player {
     private String name;
     private String playerIP;
@@ -98,5 +100,9 @@ public class player {
                 ", isOwner=" + isOwner +
                 ", handCards=" + handCards +
                 '}';
+    }
+
+    public void showCards(){
+        System.out.println(handCards);
     }
 }

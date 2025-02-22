@@ -99,6 +99,12 @@ public class cardStack {
         }
     }
 
+    public void insertCardsToTop(cardStack cards){
+        for (cardBean card : cards.getStack()) {
+            insertCardToTop(card);
+        }
+    }
+
     public void insertCardToBottom(cardBean c) {
         stack.addFirst(c);
     }
@@ -106,6 +112,12 @@ public class cardStack {
     public void insertNCardsToBottom(cardBean c, int n) {
         for (int i = 0; i < n; i++) {
             stack.addFirst(c);
+        }
+    }
+
+    public void insertCardsToBottom(cardStack cards){
+        for (cardBean card : cards.getStack()) {
+            insertCardToBottom(card);
         }
     }
 
@@ -157,6 +169,10 @@ public class cardStack {
         }
     }
 
+    public void deleteOne(int index){
+        stack.remove(index);
+    }
+
     public static cardStack parseStackFromJson(String json) throws JsonParseException {
         if (json == null || json.equals("null")) {
             return null; // 避免解析错误
@@ -170,7 +186,7 @@ public class cardStack {
         JsonArray arr = obj.get("stack").getAsJsonArray();
         cardStack stack = new cardStack(name);
         for (JsonElement e : arr) {
-            stack.insertCardToTop(cardBean.parseCardFromJson(e.getAsString()));
+            stack.insertCardToTop(cardBean.parseCardFromJson(e.toString()));
         }
         return stack;
     }

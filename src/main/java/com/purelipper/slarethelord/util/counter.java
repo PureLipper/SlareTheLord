@@ -17,6 +17,7 @@ public class counter{
                 Thread.sleep(1000);
             }
             interrupted = true;
+
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

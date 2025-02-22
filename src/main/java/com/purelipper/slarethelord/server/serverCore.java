@@ -58,7 +58,7 @@ public class serverCore {
                         syncRoom();
                     }
                     case "onlineDetectAck" -> {
-                        System.out.println("onlineDetectAck received from: " + msg.getSourceIP());
+//                        System.out.println("onlineDetectAck received from: " + msg.getSourceIP());
                         for (player player : r.getPlayers()) {
                             try {
                                 if (player != null && player.getPlayerIP().equals(msg.getSourceIP().getHostAddress())) {
@@ -110,6 +110,7 @@ public class serverCore {
                                 break;
                             }
                         }
+                        syncRoom();
                     }
 
                     case "gameStart" -> {
@@ -250,7 +251,6 @@ public class serverCore {
             shutdownServer();
         }
     }
-
 
     public void openListener() {
         listener.start();

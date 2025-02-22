@@ -1,16 +1,16 @@
 [
   {
-    "name": "Jack",
+    "figure": "J",
     "damage": 10,
     "health": 20
   },
   {
-    "name": "Queen",
+    "figure": "Q",
     "damage": 15,
     "health": 30
   },
   {
-    "name": "King",
+    "figure": "K",
     "damage": 20,
     "health": 40
   }

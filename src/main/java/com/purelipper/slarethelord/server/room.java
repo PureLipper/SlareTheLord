@@ -37,11 +37,13 @@ public class room {
         boolean ifPwdRequired = obj.get("ifPwdRequired").getAsBoolean();
         String roomPassword = obj.get("roomPassword").getAsString();
         JsonArray players = obj.getAsJsonArray("players");
-        boolean[] isReady = new boolean[4];
+        JsonArray isReady = obj.getAsJsonArray("isReady");
+        boolean[] isReadyB = new boolean[]{isReady.get(0).getAsBoolean(), isReady.get(1).getAsBoolean(), isReady.get(2).getAsBoolean(), isReady.get(3).getAsBoolean()};
         int status = obj.get("status").getAsInt();
 
+
         InetAddress serverIP = InetAddress.getByName(IP);
-        room r = new room(roomName, serverIP, ifPwdRequired, roomPassword, isReady, status);
+        room r = new room(roomName, serverIP, ifPwdRequired, roomPassword, isReadyB, status);
 
         int pos = 0;
         if (players != null) {
